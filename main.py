@@ -128,7 +128,7 @@ async def gen(ctx,name=None):
 @commands.has_permissions(administrator=True)
 async def sfaadd(ctx, account=None):
     if account is None:
-        embed = discord.Embed(title=f"The command is: ```Add Minecraft SFA Accounts [Account]```", colour=0xFF0000)
+        embed = discord.Embed(title=f"The command is: ```Add (Any) Accounts [Account]```", colour=0xFF0000)
         await ctx.send(embed=embed)
         return
     else:
@@ -146,7 +146,7 @@ async def clear_error(ctx, error):
 @commands.has_permissions(administrator=True)
 async def nfaadd(ctx, account=None):
     if account is None:
-        embed = discord.Embed(title=f"The command is: ```Add Minecraft NFA Accounts [Account]```", colour=0xFF0000)
+        embed = discord.Embed(title=f"The command is: ```Add (Any) Accounts [Account]```", colour=0xFF0000)
         await ctx.send(embed=embed)
         return
     else:
@@ -164,7 +164,7 @@ async def clear_error(ctx, error):
 @commands.has_permissions(administrator=True)
 async def mfaadd(ctx, account=None):
     if account is None:
-        embed = discord.Embed(title=f"The command is: ```Add Minecraft MFA Accounts [Account]```", colour=0xFF0000)
+        embed = discord.Embed(title=f"The command is: ```Add (Any) Accounts [Account]```", colour=0xFF0000)
         await ctx.send(embed=embed)
         return
     else:
@@ -182,11 +182,11 @@ async def clear_error(ctx, error):
 @commands.has_permissions(administrator=True)
 async def steamadd(ctx, account=None):
     if account is None:
-        embed = discord.Embed(title=f"The command is: ```Add Steam Accounts [Account]```", colour=0xFF0000)
+        embed = discord.Embed(title=f"The command is: ```Add (Any) Accounts [Account]```", colour=0xFF0000)
         await ctx.send(embed=embed)
         return
     else:
-        with open("Accounts/mfa.txt", "a") as file:
+        with open("Accounts/steam.txt", "a") as file:
             file.write(account + "\n")
             await ctx.send("Done")
             print(f"One accounts was puted in the Generator")
@@ -210,7 +210,7 @@ async def botinfo(ctx):
     embed.add_field(name="\u200b",value="[Join my support server](https://discord.gg/x-slayer-op) • [Invite me](https://discord.com/oauth2/authorize?client_id=924936306126106634&scope=bot%20applications.commands&permissions=8589934591)")
     embed.set_thumbnail(url=str(ctx.guild.icon_url))
     embed.set_author(name=f"{ctx.author}",icon_url=f"{ctx.author.avatar_url}")
-    embed.set_footer(text=f"Rewards Generator | {datetime.datetime.now().hour}:{datetime.datetime.now().minute}",icon_url="https://cdn.discordapp.com/attachments/927073213794627623/927229934508834816/canopus_image.jpg")
+    embed.set_footer(text=f"Bot | {datetime.datetime.now().hour}:{datetime.datetime.now().minute}",icon_url="https://cdn.discordapp.com/attachments/927073213794627623/927229934508834816/canopus_image.jpg")
     await ctx.channel.send(embed=embed)
 
 bot.run("TOKEN")
